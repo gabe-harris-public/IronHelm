@@ -12,12 +12,17 @@ namespace IronHelm.Heroes
         public KilnOlma()
         {
             Name = "Kiln-Olma";
-            Health = 11;
-            Energy = 13;
-            Encumbrance = 10;
+            
+            HealthMaximum = 11;
+            Health = HealthMaximum;
+
+            EnergyMaximum = 13;
+            Energy = EnergyMaximum;
+
+            EncumbranceMaximum = 10;
             Wealth = 2;
             Rations = 2;
-            TrappingList = new List<ITrapping>
+            Inventory = new List<IItem>
             {
                 new DuskShroom()
             };
@@ -31,14 +36,16 @@ namespace IronHelm.Heroes
             };
         }
 
-        public int Encumbrance { get; set; }
+        public int EncumbranceMaximum { get; set; }
         public int Energy { get; set; }
-        public int Health { get; set; }
+        public int Health { get; set; } 
         public string Name { get; }
         public int Rations { get; set; }
         public List<ISkill> SkillList { get; set; }
         public List<ISkillProficiency> SkillProficiencies { get; set; }
-        public List<ITrapping> TrappingList { get; set; }
+        public List<IItem> Inventory { get; set; }
         public int Wealth { get; set; }
+        public int EnergyMaximum { get; set; }
+        public int HealthMaximum { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace IronHelm.Trappings
 {
-    public interface ITrapping
+    public interface IItem
     {
         string Name { get; }
         int Cost { get; }

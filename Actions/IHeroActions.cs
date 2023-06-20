@@ -5,6 +5,6 @@ namespace IronHelm.Actions
 {
     public interface IHeroActions
     {
-        IHero TrappingUse(IHero hero, ITrapping trapping);
+        IHero TrappingUse(IHero hero, IItem trapping);
     }
 }

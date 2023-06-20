@@ -7,14 +7,20 @@ namespace IronHelm.Actions
 {
     public static class HeroActions
     {
-        public static IHero TrappingPurchase(KilnOlma kilnOlma, ITrapping trapping)
+        public static IHero ItemPurchase(IHero hero, IItem item)
         {
-            return trapping.Purchase(kilnOlma);
+            if (Validations.Hero.CanAddToInventory(hero, item) && Validations.Hero.CanPurchase(hero, item))
+                return item.Purchase(hero);
+            else
+                return hero;
         }
 
-        public static IHero TrappingUse(KilnOlma kilnOlma, ITrapping trapping)
+        public static IHero ItemUse(IHero hero, IItem item)
         {
-            return trapping.Affect(kilnOlma);
+            if (hero.Inventory.Contains(item))
+                return item.Affect(hero);
+            else
+                return hero;
         }
     }
 }

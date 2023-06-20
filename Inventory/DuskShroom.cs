@@ -4,7 +4,7 @@ using IronHelm.Heroes;
 
 namespace IronHelm.Trappings
 {
-    public class DuskShroom : ITrapping
+    public class DuskShroom : IItem
     {
         public string Name => "Dusk Shroom";
 
@@ -16,13 +16,14 @@ namespace IronHelm.Trappings
         {
             hero.Energy += 2;
             hero.Health += 2;
-            hero.Encumbrance -= 1;
+            hero.EncumbranceMaximum -= 1;
             return hero;
         }
 
         public IHero Purchase(IHero hero)
         {
             hero.Wealth -= 2;
+            hero.EncumbranceMaximum += 1;
             return hero;
         }
     }
