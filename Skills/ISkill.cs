@@ -2,6 +2,6 @@
 {
     public interface ISkill
     {
-        string Name { get;}
+        string Name { get; }
     }
 }

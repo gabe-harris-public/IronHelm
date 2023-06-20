@@ -1,4 +1,7 @@
-﻿using IronHelm.SkillProficiencies;
+﻿// Ignore Spelling: Olma
+
+using IronHelm.Actions;
+using IronHelm.SkillProficiencies;
 using IronHelm.Skills;
 using IronHelm.Trappings;
 
@@ -34,8 +37,8 @@ namespace IronHelm.Heroes
         public string Name { get; }
         public int Rations { get; set; }
         public List<ISkill> SkillList { get; set; }
-        public List<ISkillProficiency> SkillProficiencies { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public List<ITrapping> TrappingList { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public List<ISkillProficiency> SkillProficiencies { get; set; }
+        public List<ITrapping> TrappingList { get; set; }
         public int Wealth { get; set; }
     }
 }
