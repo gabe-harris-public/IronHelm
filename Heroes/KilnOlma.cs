@@ -33,7 +33,7 @@ namespace IronHelm.Heroes
             SkillProficiencies = new List<ISkillProficiency> {
                 new Mind()
             };
-            HeroConditions = new List<HeroConditions.Type> {
+            Conditions = new List<HeroConditions.Type> {
                 new HeroConditions.Type()
             };
         }
@@ -50,6 +50,6 @@ namespace IronHelm.Heroes
         public int Wealth { get; set; }
         public int EnergyMaximum { get; set; }
         public int HealthMaximum { get; set; }
-        public List<HeroConditions.Type> HeroConditions { get; set; }
+        public List<HeroConditions.Type> Conditions { get; set; }
     }
 }
