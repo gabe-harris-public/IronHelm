@@ -1,5 +1,6 @@
 ﻿// Ignore Spelling: Olma
 
+using IronHelm.Enumerations;
 using IronHelm.SkillProficiencies;
 using IronHelm.Skills;
 using IronHelm.Trappings;
@@ -19,19 +20,21 @@ namespace IronHelm.Heroes
             Energy = EnergyMaximum;
 
             EncumbranceMaximum = 10;
+            Encumbrance = 0;
+
             Wealth = 2;
             Rations = 2;
-            Inventory = new List<IItem>
-            {
+            Inventory = new List<IItem> {
                 new DuskShroom()
             };
-            SkillList = new List<ISkill>
-            {
+            SkillList = new List<ISkill> {
                 new MartialArts()
             };
-            SkillProficiencies = new List<ISkillProficiency>
-            {
+            SkillProficiencies = new List<ISkillProficiency> {
                 new Mind()
+            };
+            HeroConditions = new List<HeroConditions.Type> {
+                new HeroConditions.Type()
             };
         }
 
@@ -47,5 +50,6 @@ namespace IronHelm.Heroes
         public int Wealth { get; set; }
         public int EnergyMaximum { get; set; }
         public int HealthMaximum { get; set; }
+        public List<HeroConditions.Type> HeroConditions { get; set; }
     }
 }
