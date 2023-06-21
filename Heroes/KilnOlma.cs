@@ -1,6 +1,5 @@
 ﻿// Ignore Spelling: Olma
 
-using IronHelm.Actions;
 using IronHelm.SkillProficiencies;
 using IronHelm.Skills;
 using IronHelm.Trappings;
@@ -12,7 +11,7 @@ namespace IronHelm.Heroes
         public KilnOlma()
         {
             Name = "Kiln-Olma";
-            
+
             HealthMaximum = 11;
             Health = HealthMaximum;
 
@@ -36,9 +35,10 @@ namespace IronHelm.Heroes
             };
         }
 
+        public int Encumbrance { get; set; }
         public int EncumbranceMaximum { get; set; }
         public int Energy { get; set; }
-        public int Health { get; set; } 
+        public int Health { get; set; }
         public string Name { get; }
         public int Rations { get; set; }
         public List<ISkill> SkillList { get; set; }
