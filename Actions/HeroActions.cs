@@ -1,5 +1,6 @@
 ﻿// Ignore Spelling: Olma
 
+using IronHelm.Enumerations;
 using IronHelm.Heroes;
 using IronHelm.Trappings;
 
@@ -17,15 +18,21 @@ namespace IronHelm.Actions
         public static IHero EncumbranceIncrease(IHero hero, IItem item)
         {
             hero.Encumbrance = hero.Encumbrance + item.Encumbrance;
-            //TODO What to do if player is over encumbered
+            if (hero.Encumbrance > hero.EncumbranceMaximum)
+            {
+                hero.Conditions.Add(HeroConditions.Type.OverEncumbered);
+            }
             return hero;
         }
 
         public static IHero EnergyDecrease(IHero hero, int amount)
         {
             hero.Energy -= amount;
-            if (hero.Energy < 0) hero.Energy = 0;
-            //TODO apply weakened Enum
+            if (hero.Energy <= 0)
+            {
+                hero.Energy = 0;
+                hero.Conditions.Add(HeroConditions.Type.Weakened);
+            }
             return hero;
         }
 
@@ -40,8 +47,11 @@ namespace IronHelm.Actions
         {
             hero.Health -= amount;
 
-            if (hero.Health < 0) hero.Health = 0;
-            //TODO apply Death Enum
+            if (hero.Health <= 0)
+            {
+                hero.Health = 0;
+                hero.Conditions.Add(HeroConditions.Type.Death);
+            }
             return hero;
         }
 

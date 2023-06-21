@@ -19,6 +19,6 @@ namespace IronHelm.Heroes
         List<ISkillProficiency> SkillProficiencies { get; set; }
         List<IItem> Inventory { get; set; }
         int Wealth { get; set; }
-        List<HeroConditions.Type> HeroConditions { get; set; }
+        List<HeroConditions.Type> Conditions { get; set; }
     }
 }
