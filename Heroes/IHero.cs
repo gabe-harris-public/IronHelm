@@ -1,4 +1,5 @@
-﻿using IronHelm.SkillProficiencies;
+﻿using IronHelm.Enumerations;
+using IronHelm.SkillProficiencies;
 using IronHelm.Skills;
 using IronHelm.Trappings;
 
@@ -17,5 +18,6 @@ namespace IronHelm.Heroes
         List<ISkillProficiency> SkillProficiencies { get; set; }
         List<IItem> Inventory { get; set; }
         int Wealth { get; set; }
+        List<HeroConditions.Type> HeroConditions { get; set; }
     }
 }
