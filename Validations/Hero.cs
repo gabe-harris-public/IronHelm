@@ -7,7 +7,7 @@ namespace IronHelm.Validations
     {
         public static bool CanAddToInventory(IHero hero, IItem trapping)
         {
-            if (hero.EncumbranceMaximum <= EncumbranceTotal(hero) + trapping.Encumbrance) return true;
+            if (hero.EncumbranceMaximum >= EncumbranceTotal(hero) + trapping.Encumbrance) return true;
             else return false;
         }
 

@@ -9,6 +9,5 @@ namespace IronHelm.Trappings
         int Encumbrance { get; }
 
         IHero Affect(IHero hero);
-        IHero Purchase(IHero hero);
     }
 }

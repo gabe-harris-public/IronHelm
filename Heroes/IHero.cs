@@ -7,6 +7,7 @@ namespace IronHelm.Heroes
 {
     public interface IHero
     {
+        int Encumbrance { get; set; }
         int EncumbranceMaximum { get; set; }
         int Energy { get; set; }
         int EnergyMaximum { get; set; }

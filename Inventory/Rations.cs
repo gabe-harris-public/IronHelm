@@ -1,4 +1,5 @@
-﻿using IronHelm.Heroes;
+﻿using IronHelm.Actions;
+using IronHelm.Heroes;
 
 namespace IronHelm.Trappings
 {
@@ -10,16 +11,8 @@ namespace IronHelm.Trappings
 
         public IHero Affect(IHero hero)
         {
-            hero.EncumbranceMaximum -= Encumbrance;
-            hero.Rations += 2;
-            return hero;
-        }
-
-        public IHero Purchase(IHero hero)
-        {
-            hero.Wealth -= 1;
-            hero.EncumbranceMaximum += 0;
-            hero.Inventory.Add(new Rations());
+            hero = HeroActions.RationsIncrease(hero, 2);
+            hero = HeroActions.ItemRemoveFromInventory(hero, new Rations());
             return hero;
         }
     }

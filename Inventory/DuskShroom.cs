@@ -1,29 +1,21 @@
 ﻿// Ignore Spelling: Shroom
 
+using IronHelm.Actions;
 using IronHelm.Heroes;
 
 namespace IronHelm.Trappings
 {
     public class DuskShroom : IItem
     {
-        public string Name => "Dusk Shroom";
-
         public int Cost => 2;
-
         public int Encumbrance => 1;
+        public string Name => "Dusk Shroom";
 
         public IHero Affect(IHero hero)
         {
-            hero.Energy += 2;
-            hero.Health += 2;
-            hero.EncumbranceMaximum -= 1;
-            return hero;
-        }
-
-        public IHero Purchase(IHero hero)
-        {
-            hero.Wealth -= 2;
-            hero.EncumbranceMaximum += 1;
+            hero = HeroActions.HealthIncrease(hero, 2);
+            hero = HeroActions.EnergyIncrease(hero, 2);
+            hero = HeroActions.ItemRemoveFromInventory(hero, new DuskShroom());
             return hero;
         }
     }

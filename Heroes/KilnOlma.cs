@@ -1,10 +1,5 @@
 ﻿// Ignore Spelling: Olma
 
-<<<<<<< Updated upstream
-using IronHelm.Actions;
-=======
-using IronHelm.Enumerations;
->>>>>>> Stashed changes
 using IronHelm.SkillProficiencies;
 using IronHelm.Skills;
 using IronHelm.Trappings;
@@ -16,7 +11,7 @@ namespace IronHelm.Heroes
         public KilnOlma()
         {
             Name = "Kiln-Olma";
-            
+
             HealthMaximum = 11;
             Health = HealthMaximum;
 
@@ -26,23 +21,24 @@ namespace IronHelm.Heroes
             EncumbranceMaximum = 10;
             Wealth = 2;
             Rations = 2;
-            Inventory = new List<IItem>            {
+            Inventory = new List<IItem>
+            {
                 new DuskShroom()
             };
-            SkillList = new List<ISkill>            {
+            SkillList = new List<ISkill>
+            {
                 new MartialArts()
             };
-            SkillProficiencies = new List<ISkillProficiency>            {
+            SkillProficiencies = new List<ISkillProficiency>
+            {
                 new Mind()
-            };
-            HeroConditions = new List<HeroConditions.Type> {
-                new HeroConditions.Type()
             };
         }
 
+        public int Encumbrance { get; set; }
         public int EncumbranceMaximum { get; set; }
         public int Energy { get; set; }
-        public int Health { get; set; } 
+        public int Health { get; set; }
         public string Name { get; }
         public int Rations { get; set; }
         public List<ISkill> SkillList { get; set; }
@@ -51,6 +47,5 @@ namespace IronHelm.Heroes
         public int Wealth { get; set; }
         public int EnergyMaximum { get; set; }
         public int HealthMaximum { get; set; }
-        public List<HeroConditions.Type> HeroConditions { get; set; }
     }
 }
