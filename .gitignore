@@ -1,2 +1,4 @@
-
-obj/Debug/
+IronHelm/obj
+IronHelmTests/bin
+IronHelmTests/obj
+.vs/
