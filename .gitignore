@@ -1,10 +1,2 @@
 
-obj/Debug/net6.0/IronHelm.pdb
-bin/Debug/net6.0/IronHelm.pdb
-bin/Debug/net6.0/IronHelm.dll
-obj/Debug/net6.0/IronHelm.dll
-obj/Debug/net6.0/IronHelm.csproj.CoreCompileInputs.cache
-obj/Debug/net6.0/IronHelm.csproj.FileListAbsolute.txt
-obj/Debug/net6.0/ref/IronHelm.dll
-obj/Debug/net6.0/refint/IronHelm.dll
-bin/Debug/net6.0/IronHelm.deps.json
+obj/Debug/
