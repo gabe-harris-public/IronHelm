@@ -16,11 +16,12 @@ namespace IronHelmTests
             var beforePurchaseWealth = kilnOlma.Wealth;
             HeroActions.ItemPurchase(kilnOlma, new Rations());
             var afterPurchaseWealth = kilnOlma.Wealth;
-            Assert.NotEqual(beforePurchaseWealth, afterPurchaseWealth);
 
             var beforeRationCount = kilnOlma.Rations;
             HeroActions.ItemUse(kilnOlma, new Rations());
             var afterRationCount = kilnOlma.Rations;
+
+            Assert.NotEqual(beforePurchaseWealth, afterPurchaseWealth);
             Assert.NotEqual(beforeRationCount, afterRationCount);
         }
 
@@ -32,7 +33,6 @@ namespace IronHelmTests
             var beforePurchaseWealth = kilnOlma.Wealth;
             IronHelm.Actions.HeroActions.ItemPurchase(kilnOlma, new DuskShroom());
             var afterPurchaseWealth = kilnOlma.Wealth;
-            Assert.NotEqual(beforePurchaseWealth, afterPurchaseWealth);
 
             var healthBeforeDarkShroom = kilnOlma.Health;
             var energyBeforeDarkShroom = kilnOlma.Energy;
@@ -42,6 +42,7 @@ namespace IronHelmTests
             var healthAfterDarkShroom = kilnOlma.Health;
             var energyAfterDarkShroom = kilnOlma.Energy;
 
+            Assert.NotEqual(beforePurchaseWealth, afterPurchaseWealth);
             Assert.Equal(healthBeforeDarkShroom, healthAfterDarkShroom);
             Assert.Equal(energyBeforeDarkShroom, energyAfterDarkShroom);
         }
