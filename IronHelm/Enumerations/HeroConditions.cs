@@ -4,9 +4,10 @@
     {
         public enum Type
         {
-            Death = 0,
-            Weakened = 1,
-            OverEncumbered = 2,
+            Normal = 0,
+            Death = 1,
+            Weakened = 2,
+            OverEncumbered = 3,
         }
     }
 }
