@@ -1,7 +1,9 @@
-﻿namespace IronHelm.SkillProficiencies
+﻿using IronHelm.Enumerations;
+
+namespace IronHelm.SkillProficiencies
 {
     public class Mind : ISkillProficiency
     {
-        public string Name => "Mind";
+        public HeroSkillProficiencies.Type proficiency => HeroSkillProficiencies.Type.Mind;
     }
 }

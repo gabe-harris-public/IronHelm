@@ -1,7 +1,9 @@
-﻿namespace IronHelm.SkillProficiencies
+﻿using IronHelm.Enumerations;
+
+namespace IronHelm.SkillProficiencies
 {
     public interface ISkillProficiency
     {
-        string Name { get; }
+        HeroSkillProficiencies.Type proficiency { get; }
     }
 }

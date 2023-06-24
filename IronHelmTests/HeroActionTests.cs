@@ -1,12 +1,12 @@
 // Ignore Spelling: Shroom
 
+using IronHelm.Actions;
 using IronHelm.Heroes;
 using IronHelm.Trappings;
-using IronHelm.Actions;
 
 namespace IronHelmTests
 {
-    public class HeroActionsTests
+    public class HeroActionTests
     {
         [Fact]
         public void PurchaseAndUseRationTrapping()
