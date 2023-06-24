@@ -2,10 +2,11 @@
 
 using IronHelm.Heroes;
 using IronHelm.Trappings;
+using IronHelm.Actions;
 
 namespace IronHelmTests
 {
-    public class HeroActions
+    public class HeroActionsTests
     {
         [Fact]
         public void PurchaseAndUseRationTrapping()
@@ -13,12 +14,12 @@ namespace IronHelmTests
             var kilnOlma = new KilnOlma();
 
             var beforePurchaseWealth = kilnOlma.Wealth;
-            kilnOlma = (KilnOlma)IronHelm.Actions.HeroActions.ItemPurchase(kilnOlma, new Rations());
+            HeroActions.ItemPurchase(kilnOlma, new Rations());
             var afterPurchaseWealth = kilnOlma.Wealth;
             Assert.NotEqual(beforePurchaseWealth, afterPurchaseWealth);
 
             var beforeRationCount = kilnOlma.Rations;
-            kilnOlma = (KilnOlma)IronHelm.Actions.HeroActions.ItemUse(kilnOlma, new Rations());
+            HeroActions.ItemUse(kilnOlma, new Rations());
             var afterRationCount = kilnOlma.Rations;
             Assert.NotEqual(beforeRationCount, afterRationCount);
         }
@@ -29,15 +30,15 @@ namespace IronHelmTests
             var kilnOlma = new KilnOlma();
 
             var beforePurchaseWealth = kilnOlma.Wealth;
-            kilnOlma = (KilnOlma)IronHelm.Actions.HeroActions.ItemPurchase(kilnOlma, new DuskShroom());
+            IronHelm.Actions.HeroActions.ItemPurchase(kilnOlma, new DuskShroom());
             var afterPurchaseWealth = kilnOlma.Wealth;
             Assert.NotEqual(beforePurchaseWealth, afterPurchaseWealth);
 
             var healthBeforeDarkShroom = kilnOlma.Health;
             var energyBeforeDarkShroom = kilnOlma.Energy;
-            kilnOlma = (KilnOlma)IronHelm.Actions.HeroActions.HealthDecrease(kilnOlma, 2);
-            kilnOlma = (KilnOlma)IronHelm.Actions.HeroActions.EnergyDecrease(kilnOlma, 2);
-            kilnOlma = (KilnOlma)IronHelm.Actions.HeroActions.ItemUse(kilnOlma, new DuskShroom());
+            HeroActions.HealthDecrease(kilnOlma, 2);
+            HeroActions.EnergyDecrease(kilnOlma, 2);
+            HeroActions.ItemUse(kilnOlma, new DuskShroom());
             var healthAfterDarkShroom = kilnOlma.Health;
             var energyAfterDarkShroom = kilnOlma.Energy;
 
