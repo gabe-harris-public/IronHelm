@@ -1,4 +1,5 @@
 ﻿using IronHelm.Actions;
+using IronHelm.Enumerations;
 using IronHelm.Heroes;
 
 namespace IronHelm.Trappings
@@ -8,6 +9,7 @@ namespace IronHelm.Trappings
         public int Cost => 1;
         public int Encumbrance => 0;
         public string Name => "Rations";
+        public EquipableItem.LocationType LocationType => EquipableItem.LocationType.Accessory;
 
         public Hero Equip(Hero hero)
         {

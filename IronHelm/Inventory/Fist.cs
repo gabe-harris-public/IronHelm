@@ -1,4 +1,5 @@
-﻿using IronHelm.Heroes;
+﻿using IronHelm.Enumerations;
+using IronHelm.Heroes;
 using IronHelm.Trappings;
 
 namespace IronHelm.Inventory
@@ -10,6 +11,8 @@ namespace IronHelm.Inventory
         public int Cost => 0;
 
         public int Encumbrance => 0;
+        public EquipableItem.LocationType LocationType => EquipableItem.LocationType.PrimaryHand;
+
 
         public Hero Equip(Hero hero)
         {

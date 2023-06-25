@@ -40,10 +40,10 @@ namespace IronHelm.Heroes
             SkillProficiencies = new List<ISkillProficiency> {
                 new Mind()
             };
-            Conditions = new List<HeroConditions.Type> {
-                new HeroConditions.Type()
+            Conditions = new List<HeroConditions.Type>
+            {
+                HeroConditions.Type.Normal
             };
-            Conditions.Add(new HeroConditions.Type.Normal);
         }
     }
 }
