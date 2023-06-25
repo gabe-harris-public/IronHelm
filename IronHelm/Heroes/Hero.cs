@@ -1,4 +1,5 @@
 ﻿using IronHelm.Enumerations;
+using IronHelm.Inventory;
 using IronHelm.SkillProficiencies;
 using IronHelm.Skills;
 using IronHelm.Trappings;
@@ -7,6 +8,10 @@ namespace IronHelm.Heroes
 {
     public abstract class Hero : IHero, IBeing
     {
+        public Hero()
+        {
+            Inventory.Add(new Fist());
+        }
         public int Encumbrance { get; set; }
         public int EncumbranceMaximum { get; set; }
         public int Energy { get; set; }

@@ -73,6 +73,12 @@ namespace IronHelm.Actions
             return hero;
         }
 
+        public static Hero ItemAddToInventory(Hero hero, IItem item)
+        {
+            hero.Inventory.Add(item);
+            return hero;
+        }
+
         public static Hero ItemRemoveFromInventory(Hero hero, IItem item)
         {
             hero.Inventory.Remove(item);

@@ -3,9 +3,9 @@ using IronHelm.Trappings;
 
 namespace IronHelm.Inventory
 {
-    internal class MartialArtsFist : IItem
+    internal class Fist : IItem
     {
-        public string Name => "Martial Arts Fist";
+        public string Name => "Bare Fist";
 
         public int Cost => 0;
 
@@ -13,12 +13,13 @@ namespace IronHelm.Inventory
 
         public Hero Equip(Hero hero)
         {
+            hero.DamageModifier += 1;
             return hero;
         }
 
         public Hero UnEquip(Hero hero)
         {
-            //Remove From Primary Hand
+            hero.DamageModifier -= 1;
             return hero;
         }
     }

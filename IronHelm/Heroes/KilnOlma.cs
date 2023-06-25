@@ -4,6 +4,8 @@ using IronHelm.Enumerations;
 using IronHelm.SkillProficiencies;
 using IronHelm.Skills;
 using IronHelm.Trappings;
+using IronHelm.Actions;
+using IronHelm.Inventory;
 
 namespace IronHelm.Heroes
 {
@@ -25,9 +27,13 @@ namespace IronHelm.Heroes
 
             Wealth = 2;
             Rations = 2;
+
             Inventory = new List<IItem> {
-                new DuskShroom()
+                new DuskShroom(),
+                new FistMartialArts()
             };
+            Inventory.Remove(new Fist());
+
             SkillList = new List<ISkill> {
                 new MartialArts()
             };
@@ -37,6 +43,7 @@ namespace IronHelm.Heroes
             Conditions = new List<HeroConditions.Type> {
                 new HeroConditions.Type()
             };
+            Conditions.Add(new HeroConditions.Type.Normal);
         }
     }
 }
