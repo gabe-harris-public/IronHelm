@@ -9,10 +9,16 @@ namespace IronHelm.Trappings
         public int Encumbrance => 0;
         public string Name => "Rations";
 
-        public IHero Affect(IHero hero)
+        public Hero Equip(Hero hero)
         {
             hero = HeroActions.RationsIncrease(hero, 2);
             hero = HeroActions.ItemRemoveFromInventory(hero, new Rations());
+            return hero;
+        }
+
+        public Hero UnEquip(Hero hero)
+        {
+            //TODO Nothing Happens
             return hero;
         }
     }

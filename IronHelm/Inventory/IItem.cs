@@ -8,6 +8,8 @@ namespace IronHelm.Trappings
         int Cost { get; }
         int Encumbrance { get; }
 
-        IHero Affect(IHero hero);
+        Hero Equip(Hero hero);
+
+        Hero UnEquip(Hero hero);
     }
 }

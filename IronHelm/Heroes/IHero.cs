@@ -11,14 +11,10 @@ namespace IronHelm.Heroes
         int EncumbranceMaximum { get; set; }
         int Energy { get; set; }
         int EnergyMaximum { get; set; }
-        int Health { get; set; }
-        int HealthMaximum { get; set; }
-        string Name { get; }
         int Rations { get; set; }
         List<ISkill> SkillList { get; set; }
         List<ISkillProficiency> SkillProficiencies { get; set; }
         List<IItem> Inventory { get; set; }
-        int Wealth { get; set; }
         List<HeroConditions.Type> Conditions { get; set; }
     }
 }

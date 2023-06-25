@@ -7,10 +7,11 @@ using IronHelm.Trappings;
 
 namespace IronHelm.Heroes
 {
-    public class KilnOlma : IHero
+    public class KilnOlma : Hero
     {
         public KilnOlma()
         {
+            DamageModifier = 0;
             Name = "Kiln-Olma";
 
             HealthMaximum = 11;
@@ -37,19 +38,5 @@ namespace IronHelm.Heroes
                 new HeroConditions.Type()
             };
         }
-
-        public int Encumbrance { get; set; }
-        public int EncumbranceMaximum { get; set; }
-        public int Energy { get; set; }
-        public int Health { get; set; }
-        public string Name { get; }
-        public int Rations { get; set; }
-        public List<ISkill> SkillList { get; set; }
-        public List<ISkillProficiency> SkillProficiencies { get; set; }
-        public List<IItem> Inventory { get; set; }
-        public int Wealth { get; set; }
-        public int EnergyMaximum { get; set; }
-        public int HealthMaximum { get; set; }
-        public List<HeroConditions.Type> Conditions { get; set; }
     }
 }

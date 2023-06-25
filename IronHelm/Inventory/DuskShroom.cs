@@ -11,11 +11,16 @@ namespace IronHelm.Trappings
         public int Encumbrance => 1;
         public string Name => "Dusk Shroom";
 
-        public IHero Affect(IHero hero)
+        public Hero Equip(Hero hero)
         {
-            hero = HeroActions.HealthIncrease(hero, 2);
-            hero = HeroActions.EnergyIncrease(hero, 2);
-            hero = HeroActions.ItemRemoveFromInventory(hero, new DuskShroom());
+            HeroActions.HealthIncrease(hero, 2);
+            HeroActions.EnergyIncrease(hero, 2);
+            HeroActions.ItemRemoveFromInventory(hero, new DuskShroom());
+            return hero;
+        }
+        public Hero UnEquip(Hero hero)
+        {
+            //TODO Nothing Happens
             return hero;
         }
     }
