@@ -62,6 +62,12 @@ namespace IronHelm.Actions
             return hero;
         }
 
+        public static Hero ItemAddToInventory(Hero hero, IItem item)
+        {
+            hero.Inventory.Add(item);
+            return hero;
+        }
+
         public static Hero ItemPurchase(Hero hero, IItem item)
         {
             if (Validations.HeroChecks.CanAddToInventory(hero, item) && Validations.HeroChecks.CanPurchase(hero, item))
@@ -72,13 +78,6 @@ namespace IronHelm.Actions
 
             return hero;
         }
-
-        public static Hero ItemAddToInventory(Hero hero, IItem item)
-        {
-            hero.Inventory.Add(item);
-            return hero;
-        }
-
         public static Hero ItemRemoveFromInventory(Hero hero, IItem item)
         {
             hero.Inventory.Remove(item);
@@ -92,16 +91,16 @@ namespace IronHelm.Actions
             return hero;
         }
 
-        public static Hero RationsIncrease(Hero hero, int amount)
-        {
-            hero.Rations += amount;
-            return hero;
-        }
-
         public static Hero RationsDecrease(Hero hero, int amount)
         {
             hero.Rations += amount;
             if (hero.Rations < 0) hero.Rations = 0;
+            return hero;
+        }
+
+        public static Hero RationsIncrease(Hero hero, int amount)
+        {
+            hero.Rations += amount;
             return hero;
         }
     }

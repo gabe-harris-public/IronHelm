@@ -1,11 +1,10 @@
 ﻿// Ignore Spelling: Olma
 
 using IronHelm.Enumerations;
+using IronHelm.Inventory;
 using IronHelm.SkillProficiencies;
 using IronHelm.Skills;
 using IronHelm.Trappings;
-using IronHelm.Actions;
-using IronHelm.Inventory;
 
 namespace IronHelm.Heroes
 {

@@ -12,6 +12,7 @@ namespace IronHelm.Heroes
         {
             Inventory.Add(new Fist());
         }
+
         public int Encumbrance { get; set; }
         public int EncumbranceMaximum { get; set; }
         public int Energy { get; set; }

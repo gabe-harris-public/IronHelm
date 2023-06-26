@@ -20,6 +20,7 @@ namespace IronHelm.Trappings
             HeroActions.ItemRemoveFromInventory(hero, new DuskShroom());
             return hero;
         }
+
         public Hero UnEquip(Hero hero)
         {
             //TODO Nothing Happens

@@ -13,7 +13,6 @@ namespace IronHelm.Inventory
         public int Encumbrance => 0;
         public EquipableItem.LocationType LocationType => EquipableItem.LocationType.PrimaryHand;
 
-
         public Hero Equip(Hero hero)
         {
             hero.DamageModifier += 1;

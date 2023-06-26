@@ -1,5 +1,5 @@
-﻿using IronHelm.Heroes;
-using IronHelm.Enumerations;
+﻿using IronHelm.Enumerations;
+using IronHelm.Heroes;
 
 namespace IronHelm.Trappings
 {
