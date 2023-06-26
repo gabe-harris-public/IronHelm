@@ -4,6 +4,6 @@ namespace IronHelm.SkillProficiencies
 {
     public interface ISkillProficiency
     {
-        HeroSkillProficiencies.Type proficiency { get; }
+        HeroSkillProficiencies.Type Proficiency { get; }
     }
 }

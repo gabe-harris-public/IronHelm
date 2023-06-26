@@ -1,4 +1,5 @@
-﻿using IronHelm.Heroes;
+﻿using IronHelm.Enumerations;
+using IronHelm.Heroes;
 
 namespace IronHelm.Trappings
 {
@@ -7,7 +8,10 @@ namespace IronHelm.Trappings
         string Name { get; }
         int Cost { get; }
         int Encumbrance { get; }
+        EquipableItem.LocationType LocationType { get; }
 
-        IHero Affect(IHero hero);
+        Hero Equip(Hero hero);
+
+        Hero UnEquip(Hero hero);
     }
 }

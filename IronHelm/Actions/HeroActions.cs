@@ -8,16 +8,16 @@ namespace IronHelm.Actions
 {
     public static class HeroActions
     {
-        public static IHero EncumbranceDecrease(IHero hero, IItem item)
+        public static Hero EncumbranceDecrease(Hero hero, IItem item)
         {
-            hero.Encumbrance = hero.Encumbrance - item.Encumbrance;
+            hero.Encumbrance -= item.Encumbrance;
             if (hero.Encumbrance < 0) hero.Encumbrance = 0;
             return hero;
         }
 
-        public static IHero EncumbranceIncrease(IHero hero, IItem item)
+        public static Hero EncumbranceIncrease(Hero hero, IItem item)
         {
-            hero.Encumbrance = hero.Encumbrance + item.Encumbrance;
+            hero.Encumbrance += item.Encumbrance;
             if (hero.Encumbrance > hero.EncumbranceMaximum)
             {
                 hero.Conditions.Add(HeroConditions.Type.OverEncumbered);
@@ -25,7 +25,7 @@ namespace IronHelm.Actions
             return hero;
         }
 
-        public static IHero EnergyDecrease(IHero hero, int amount)
+        public static Hero EnergyDecrease(Hero hero, int amount)
         {
             hero.Energy -= amount;
             if (hero.Energy <= 0)
@@ -36,14 +36,14 @@ namespace IronHelm.Actions
             return hero;
         }
 
-        public static IHero EnergyIncrease(IHero hero, int amount)
+        public static Hero EnergyIncrease(Hero hero, int amount)
         {
             hero.Energy += amount;
             if (hero.Energy > hero.EnergyMaximum) hero.Energy = hero.EnergyMaximum;
             return hero;
         }
 
-        public static IHero HealthDecrease(IHero hero, int amount)
+        public static Hero HealthDecrease(Hero hero, int amount)
         {
             hero.Health -= amount;
 
@@ -55,16 +55,22 @@ namespace IronHelm.Actions
             return hero;
         }
 
-        public static IHero HealthIncrease(IHero hero, int amount)
+        public static Hero HealthIncrease(Hero hero, int amount)
         {
             hero.Health += amount;
             if (hero.Health > hero.HealthMaximum) hero.Health = hero.HealthMaximum;
             return hero;
         }
 
-        public static IHero ItemPurchase(IHero hero, IItem item)
+        public static Hero ItemAddToInventory(Hero hero, IItem item)
         {
-            if (Validations.Hero.CanAddToInventory(hero, item) && Validations.Hero.CanPurchase(hero, item))
+            hero.Inventory.Add(item);
+            return hero;
+        }
+
+        public static Hero ItemPurchase(Hero hero, IItem item)
+        {
+            if (Validations.HeroChecks.CanAddToInventory(hero, item) && Validations.HeroChecks.CanPurchase(hero, item))
             {
                 hero.Wealth -= item.Cost;
                 hero.Inventory.Add(item);
@@ -72,30 +78,29 @@ namespace IronHelm.Actions
 
             return hero;
         }
-
-        public static IHero ItemRemoveFromInventory(IHero hero, IItem item)
+        public static Hero ItemRemoveFromInventory(Hero hero, IItem item)
         {
             hero.Inventory.Remove(item);
 
             return hero;
         }
 
-        public static IHero ItemUse(IHero hero, IItem item)
+        public static Hero ItemUse(Hero hero, IItem item)
         {
-            if (hero.Inventory.Any(i => i.GetType() == item.GetType())) item.Affect(hero);
+            if (hero.Inventory.Any(i => i.GetType() == item.GetType())) item.Equip(hero);
             return hero;
         }
 
-        public static IHero RationsIncrease(IHero hero, int amount)
-        {
-            hero.Rations += amount;
-            return hero;
-        }
-
-        public static IHero RationsDecrease(IHero hero, int amount)
+        public static Hero RationsDecrease(Hero hero, int amount)
         {
             hero.Rations += amount;
             if (hero.Rations < 0) hero.Rations = 0;
+            return hero;
+        }
+
+        public static Hero RationsIncrease(Hero hero, int amount)
+        {
+            hero.Rations += amount;
             return hero;
         }
     }
