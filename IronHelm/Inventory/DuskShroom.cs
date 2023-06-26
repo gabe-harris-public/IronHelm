@@ -10,9 +10,8 @@ namespace IronHelm.Trappings
     {
         public int Cost => 2;
         public int Encumbrance => 1;
-        public string Name => "Dusk Shroom";
         public EquipableItem.LocationType LocationType => EquipableItem.LocationType.Accessory;
-
+        public string Name => "Dusk Shroom";
         public Hero Equip(Hero hero)
         {
             HeroActions.HealthIncrease(hero, 2);
@@ -23,7 +22,6 @@ namespace IronHelm.Trappings
 
         public Hero UnEquip(Hero hero)
         {
-            //TODO Nothing Happens
             return hero;
         }
     }

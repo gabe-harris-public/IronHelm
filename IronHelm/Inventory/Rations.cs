@@ -8,9 +8,8 @@ namespace IronHelm.Trappings
     {
         public int Cost => 1;
         public int Encumbrance => 0;
-        public string Name => "Rations";
         public EquipableItem.LocationType LocationType => EquipableItem.LocationType.Accessory;
-
+        public string Name => "Rations";
         public Hero Equip(Hero hero)
         {
             hero = HeroActions.RationsIncrease(hero, 2);
@@ -20,7 +19,6 @@ namespace IronHelm.Trappings
 
         public Hero UnEquip(Hero hero)
         {
-            //TODO Nothing Happens
             return hero;
         }
     }

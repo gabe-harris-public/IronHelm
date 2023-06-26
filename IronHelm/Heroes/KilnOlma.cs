@@ -12,37 +12,31 @@ namespace IronHelm.Heroes
     {
         public KilnOlma()
         {
+            Conditions = new List<HeroConditions.Type>
+            {
+                HeroConditions.Type.Normal
+            };
             DamageModifier = 0;
-            Name = "Kiln-Olma";
-
-            HealthMaximum = 11;
-            Health = HealthMaximum;
-
-            EnergyMaximum = 13;
-            Energy = EnergyMaximum;
-
-            EncumbranceMaximum = 10;
             Encumbrance = 0;
-
-            Wealth = 2;
-            Rations = 2;
-
+            EncumbranceMaximum = 10;
+            Energy = EnergyMaximum;
+            EnergyMaximum = 13;
+            Health = HealthMaximum;
+            HealthMaximum = 11;
             Inventory = new List<IItem> {
                 new DuskShroom(),
                 new FistMartialArts()
             };
             Inventory.Remove(new Fist());
-
+            Name = "Kiln-Olma";
+            Rations = 2;
             SkillList = new List<ISkill> {
                 new MartialArts()
             };
             SkillProficiencies = new List<ISkillProficiency> {
                 new Mind()
             };
-            Conditions = new List<HeroConditions.Type>
-            {
-                HeroConditions.Type.Normal
-            };
+            Wealth = 2;
         }
     }
 }
