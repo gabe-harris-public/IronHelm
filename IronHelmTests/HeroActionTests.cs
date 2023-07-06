@@ -2,7 +2,7 @@
 
 using IronHelm.Actions;
 using IronHelm.Heroes;
-using IronHelm.Trappings;
+using IronHelm.Inventory;
 
 namespace IronHelmTests
 {
@@ -45,6 +45,27 @@ namespace IronHelmTests
             Assert.NotEqual(beforePurchaseWealth, afterPurchaseWealth);
             Assert.Equal(healthBeforeDarkShroom, healthAfterDarkShroom);
             Assert.Equal(energyBeforeDarkShroom, energyAfterDarkShroom);
+        }
+        [Fact]
+        public void BasicAttack()
+        {
+            var kilnOlma = new KilnOlma();
+            var energyBeforeAttack = kilnOlma.Energy;
+            var attackBasic = HeroCombatActions.AttackBasic(kilnOlma, 3);
+            kilnOlma = (KilnOlma)attackBasic.hero;
+            var energyAfterAttack = kilnOlma.Energy;
+
+            Assert.True(attackBasic.damage > 0);
+            Assert.True(energyBeforeAttack > energyAfterAttack);
+        }
+
+        [Fact]
+        public void PurchaseAndThrowAxe()
+        {
+            var kilnOlma = new KilnOlma();
+            var axe = new Axe();
+            HeroActions.ItemPurchase(kilnOlma, axe);
+            HeroCombatActions.AttackSpecial(KilnOlma, new ThrowAxe());
         }
     }
 }

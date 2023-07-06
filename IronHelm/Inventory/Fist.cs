@@ -1,6 +1,6 @@
 ﻿using IronHelm.Enumerations;
 using IronHelm.Heroes;
-using IronHelm.Trappings;
+using IronHelm.Inventory;
 
 namespace IronHelm.Inventory
 {

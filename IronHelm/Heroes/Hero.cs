@@ -2,7 +2,7 @@
 using IronHelm.Inventory;
 using IronHelm.SkillProficiencies;
 using IronHelm.Skills;
-using IronHelm.Trappings;
+using IronHelm.Inventory;
 
 namespace IronHelm.Heroes
 {

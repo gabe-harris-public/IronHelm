@@ -1,7 +1,8 @@
 ﻿using IronHelm.Enumerations;
 using IronHelm.SkillProficiencies;
 using IronHelm.Skills;
-using IronHelm.Trappings;
+using IronHelm.Inventory;
+using IronHelm.Combat;
 
 namespace IronHelm.Heroes
 {
@@ -16,5 +17,6 @@ namespace IronHelm.Heroes
         int Rations { get; set; }
         List<ISkill> SkillList { get; set; }
         List<ISkillProficiency> SkillProficiencies { get; set; }
+        List<IHeroAttack> HeroAttacks { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 using IronHelm.Enumerations;
 using IronHelm.Heroes;
 
-namespace IronHelm.Trappings
+namespace IronHelm.Inventory
 {
     public class Rations : IItem
     {

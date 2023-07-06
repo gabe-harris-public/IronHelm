@@ -1,5 +1,5 @@
 ﻿using IronHelm.Heroes;
-using IronHelm.Trappings;
+using IronHelm.Inventory;
 
 namespace IronHelm.Validations
 {

@@ -4,7 +4,7 @@ using IronHelm.Actions;
 using IronHelm.Enumerations;
 using IronHelm.Heroes;
 
-namespace IronHelm.Trappings
+namespace IronHelm.Inventory
 {
     public class DuskShroom : IItem
     {
