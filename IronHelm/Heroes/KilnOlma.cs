@@ -4,7 +4,6 @@ using IronHelm.Enumerations;
 using IronHelm.Inventory;
 using IronHelm.SkillProficiencies;
 using IronHelm.Skills;
-using IronHelm.Inventory;
 
 namespace IronHelm.Heroes
 {
@@ -16,12 +15,11 @@ namespace IronHelm.Heroes
             {
                 HeroConditions.Type.Normal
             };
-            DamageModifier = 0;
             Encumbrance = 0;
             EncumbranceMaximum = 10;
-            Energy = EnergyMaximum;
+            Energy = 13;
             EnergyMaximum = 13;
-            Health = HealthMaximum;
+            Health = 11;
             HealthMaximum = 11;
             Inventory = new List<IItem> {
                 new DuskShroom(),

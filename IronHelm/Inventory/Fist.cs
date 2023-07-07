@@ -1,10 +1,11 @@
-﻿using IronHelm.Enumerations;
+﻿using IronHelm.Combat;
+using IronHelm.Enumerations;
 using IronHelm.Heroes;
 using IronHelm.Inventory;
 
 namespace IronHelm.Inventory
 {
-    internal class Fist : IItem
+    public class Fist : IItem
     {
         public string Name => "Bare Fist";
 
@@ -15,13 +16,13 @@ namespace IronHelm.Inventory
 
         public Hero Equip(Hero hero)
         {
-            hero.DamageModifier += 1;
+            hero.CombatAttacks.Add(new AttackFist());
             return hero;
         }
 
         public Hero UnEquip(Hero hero)
         {
-            hero.DamageModifier -= 1;
+            hero.CombatAttacks.Remove(new AttackFist());
             return hero;
         }
     }

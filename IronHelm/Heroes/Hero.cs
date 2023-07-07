@@ -2,7 +2,7 @@
 using IronHelm.Inventory;
 using IronHelm.SkillProficiencies;
 using IronHelm.Skills;
-using IronHelm.Inventory;
+using IronHelm.Combat;
 
 namespace IronHelm.Heroes
 {
@@ -12,7 +12,7 @@ namespace IronHelm.Heroes
         {
             Inventory.Add(new Fist());
         }
-
+        public List<IHeroAttack> CombatAttacks { get; set; } = new List<IHeroAttack>();
         public List<HeroConditions.Type> Conditions { get; set; } = new List<HeroConditions.Type>();
         public int Encumbrance { get; set; }
         public int EncumbranceMaximum { get; set; }
@@ -25,7 +25,6 @@ namespace IronHelm.Heroes
         public int Rations { get; set; }
         public List<ISkill> SkillList { get; set; } = new List<ISkill>();
         public List<ISkillProficiency> SkillProficiencies { get; set; } = new List<ISkillProficiency>();
-        public int DamageModifier { get; set; }
         public int Wealth { get; set; }
     }
 }

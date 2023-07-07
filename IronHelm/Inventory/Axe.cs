@@ -1,5 +1,6 @@
 ﻿
 using IronHelm.Actions;
+using IronHelm.Combat;
 using IronHelm.Enumerations;
 using IronHelm.Heroes;
 using IronHelm.Inventory;
@@ -14,13 +15,15 @@ namespace IronHelm.Inventory
         public string Name => "Axe";
         public Hero Equip(Hero hero)
         {
-            HeroCombatActions.AttackSpecialAddAxeThrow(hero);
+            hero.CombatAttacks.Add(new AttackAxe());
+            hero.CombatAttacks.Add(new AttackAxeThrow());
             return hero;
         }
 
         public Hero UnEquip(Hero hero)
         {
-            HeroCombatActions.AttackSpecialRemoveAxeThrow(hero);
+            hero.CombatAttacks.Remove(new AttackAxe());
+            hero.CombatAttacks.Remove(new AttackAxeThrow());
             return hero;
         }
     }

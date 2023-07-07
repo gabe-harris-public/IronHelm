@@ -1,6 +1,7 @@
 // Ignore Spelling: Shroom
 
 using IronHelm.Actions;
+using IronHelm.Combat;
 using IronHelm.Heroes;
 using IronHelm.Inventory;
 
@@ -24,7 +25,6 @@ namespace IronHelmTests
             Assert.NotEqual(beforePurchaseWealth, afterPurchaseWealth);
             Assert.NotEqual(beforeRationCount, afterRationCount);
         }
-
         [Fact]
         public void PurchaseAndUseDuskShroom()
         {
@@ -47,16 +47,22 @@ namespace IronHelmTests
             Assert.Equal(energyBeforeDarkShroom, energyAfterDarkShroom);
         }
         [Fact]
-        public void BasicAttack()
+        public void FistMartialArtsAttack()
         {
             var kilnOlma = new KilnOlma();
             var energyBeforeAttack = kilnOlma.Energy;
-            var attackBasic = HeroCombatActions.AttackBasic(kilnOlma, 3);
-            kilnOlma = (KilnOlma)attackBasic.hero;
+
+            //Equip fist
+            kilnOlma.Inventory.Find(i => i.GetType() == typeof(FistMartialArts))?.Equip(kilnOlma);
+
+            var combatAttack = kilnOlma.CombatAttacks.Find(a => a.GetType() == typeof(AttackFistMartialArts));
+            var damage = HeroCombatActions.Attack(kilnOlma, combatAttack).damage;
+
             var energyAfterAttack = kilnOlma.Energy;
 
-            Assert.True(attackBasic.damage > 0);
-            Assert.True(energyBeforeAttack > energyAfterAttack);
+            Assert.True(kilnOlma.CombatAttacks.Count > 0);
+            Assert.True(damage > 0);
+            Assert.True(energyBeforeAttack == energyAfterAttack);
         }
 
         [Fact]
@@ -65,7 +71,6 @@ namespace IronHelmTests
             var kilnOlma = new KilnOlma();
             var axe = new Axe();
             HeroActions.ItemPurchase(kilnOlma, axe);
-            HeroCombatActions.AttackSpecial(KilnOlma, new ThrowAxe());
         }
     }
 }

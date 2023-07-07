@@ -1,65 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="NameAndType">
   <Class Name="IronHelm.Actions.HeroActions" Collapsed="true">
-    <Position X="4.75" Y="1" Width="1.5" />
+    <Position X="6.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAEAQAEAAAAABAAAAAggAAIQAAAQAAAAAAAAAIAAAAA=</HashCode>
       <FileName>Actions\HeroActions.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="IronHelm.Actions.HeroCombatActions" Collapsed="true">
-    <Position X="6.5" Y="1" Width="1.5" />
+    <Position X="8.25" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAABAAAQAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Actions\HeroCombatActions.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="IronHelm.Enumerations.HeroConditions" Collapsed="true">
-    <Position X="3" Y="2" Width="1.5" />
+    <Position X="3" Y="3" Width="1.5" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
-    <NestedTypes>
-      <Enum Name="IronHelm.Enumerations.HeroConditions.Type" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Enumerations\HeroConditions.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Enum>
-    </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enumerations\HeroConditions.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="IronHelm.Enumerations.HeroSkillProficiencies" Collapsed="true">
-    <Position X="4.75" Y="2" Width="1.5" />
+    <Position X="4.75" Y="3" Width="1.5" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
-    <NestedTypes>
-      <Enum Name="IronHelm.Enumerations.HeroSkillProficiencies.Type" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Enumerations\HeroSkillProficiencies.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Enum>
-    </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enumerations\HeroSkillProficiencies.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="IronHelm.Enumerations.EquipableItem" Collapsed="true">
-    <Position X="3" Y="1" Width="1.5" />
+    <Position X="4.75" Y="2" Width="1.5" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
-    <NestedTypes>
-      <Enum Name="IronHelm.Enumerations.EquipableItem.LocationType" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Enumerations\ItemEquipableLocations.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Enum>
-    </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enumerations\ItemEquipableLocations.cs</FileName>
@@ -68,7 +47,7 @@
   <Class Name="IronHelm.Heroes.Hero" Collapsed="true">
     <Position X="0.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAACAAAAAAAIAQCABAEAAQAAEEgAAAAAAAAAkEAAAA=</HashCode>
+      <HashCode>EAAACAAAAAAAIAQAABAEAAQAAEEoAAAAAAAAAkEAAAA=</HashCode>
       <FileName>Heroes\Hero.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -80,18 +59,64 @@
       <FileName>Heroes\KilnOlma.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="IronHelm.Combat.Actions" Collapsed="true">
+    <Position X="3" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Combat\Actions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IronHelm.Combat.AttackAxe" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACCAAAAgAAAAAAEAAQEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Combat\AttackAxe.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="IronHelm.Combat.AttackAxeThrow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACCAAAAgAAAAAAEAAQEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Combat\AttackAxeThrow.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="IronHelm.Combat.AttackFist" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACCAAAAgAAAAAAEAAQEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Combat\AttackFist.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="IronHelm.Combat.AttackFistMartialArts" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACCAAAAgAAAAAAEAAQEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Combat\AttackFistMartialArts.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
   <Interface Name="IronHelm.Actions.IHeroActions" Collapsed="true">
-    <Position X="4.75" Y="3.25" Width="1.5" />
+    <Position X="4.75" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Actions\IHeroActions.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="IronHelm.Heroes.IHero" Collapsed="true">
-    <Position X="3" Y="3.25" Width="1.5" />
+    <Position X="3" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAAAAAAAAAAIAQAABAEAAAAAAEgAAAAAAAAAkAAAAA=</HashCode>
+      <HashCode>EAAAAAAAAAAAIAQAABAEAAAAAAEoAAAAAAAAAkAAAAA=</HashCode>
       <FileName>Heroes\IHero.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IronHelm.Combat.IHeroAttack" Collapsed="true">
+    <Position X="6.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACCAAAAgAAAAAAEAAQEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Combat\IHeroAttack.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

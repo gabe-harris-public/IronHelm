@@ -1,10 +1,10 @@
-﻿using IronHelm.Enumerations;
+﻿using IronHelm.Combat;
+using IronHelm.Enumerations;
 using IronHelm.Heroes;
-using IronHelm.Inventory;
 
 namespace IronHelm.Inventory
 {
-    internal class FistMartialArts : IItem
+    public class FistMartialArts : IItem
     {
         public string Name => "Martial Arts Fist";
 
@@ -16,13 +16,13 @@ namespace IronHelm.Inventory
 
         public Hero Equip(Hero hero)
         {
-            //todo add martial arts fist attack
+            hero.CombatAttacks.Add(new AttackFistMartialArts());
             return hero;
         }
 
         public Hero UnEquip(Hero hero)
         {
-            //todo Remove martial arts fist attack
+            hero.CombatAttacks.Remove(new AttackFistMartialArts());
             return hero;
         }
     }

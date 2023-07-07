@@ -17,6 +17,6 @@ namespace IronHelm.Heroes
         int Rations { get; set; }
         List<ISkill> SkillList { get; set; }
         List<ISkillProficiency> SkillProficiencies { get; set; }
-        List<IHeroAttack> HeroAttacks { get; set; }
+        List<IHeroAttack> CombatAttacks { get; set; }
     }
 }
