@@ -9,8 +9,7 @@ namespace IronHelm.Inventory
         int Encumbrance { get; }
         EquipableItem.LocationType LocationType { get; }
         string Name { get; }
-        Hero Equip(Hero hero);
-
-        Hero UnEquip(Hero hero);
+        void Equip(Hero hero);
+        void UnEquip(Hero hero);
     }
 }

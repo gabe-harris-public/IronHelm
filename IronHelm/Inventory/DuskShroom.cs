@@ -12,17 +12,17 @@ namespace IronHelm.Inventory
         public int Encumbrance => 1;
         public EquipableItem.LocationType LocationType => EquipableItem.LocationType.Accessory;
         public string Name => "Dusk Shroom";
-        public Hero Equip(Hero hero)
+
+        public void Equip(Hero hero)
         {
             HeroActions.HealthIncrease(hero, 2);
             HeroActions.EnergyIncrease(hero, 2);
             HeroActions.ItemRemoveFromInventory(hero, new DuskShroom());
-            return hero;
         }
 
-        public Hero UnEquip(Hero hero)
+        public void UnEquip(Hero hero)
         {
-            return hero;
+            // Nothing happens
         }
     }
 }

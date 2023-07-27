@@ -53,11 +53,11 @@ namespace IronHelmTests
             var energyBeforeAttack = kilnOlma.Energy;
 
             //Equip fist
-            kilnOlma.Inventory.Find(i => i.GetType() == typeof(FistMartialArts))?.Equip(kilnOlma);
+            IItem? fistMartialArts = kilnOlma.Inventory.Find(i => i.GetType() == typeof(FistMartialArts));
+            kilnOlma.Equip(fistMartialArts);
 
-            var combatAttack = kilnOlma.CombatAttacks.Find(a => a.GetType() == typeof(AttackFistMartialArts));
-            var damage = HeroCombatActions.Attack(kilnOlma, combatAttack).damage;
-
+            //Attack
+            var damage = kilnOlma.Attack(new AttackFistMartialArts());
             var energyAfterAttack = kilnOlma.Energy;
 
             Assert.True(kilnOlma.CombatAttacks.Count > 0);

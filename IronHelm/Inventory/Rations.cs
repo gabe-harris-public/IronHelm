@@ -10,16 +10,15 @@ namespace IronHelm.Inventory
         public int Encumbrance => 0;
         public EquipableItem.LocationType LocationType => EquipableItem.LocationType.Accessory;
         public string Name => "Rations";
-        public Hero Equip(Hero hero)
+        public void Equip(Hero hero)
         {
-            hero = HeroActions.RationsIncrease(hero, 2);
-            hero = HeroActions.ItemRemoveFromInventory(hero, new Rations());
-            return hero;
+            HeroActions.RationsIncrease(hero, 2);
+            HeroActions.ItemRemoveFromInventory(hero, new Rations());
         }
 
-        public Hero UnEquip(Hero hero)
+        public void UnEquip(Hero hero)
         {
-            return hero;
+           // Nothing happens
         }
     }
 }
