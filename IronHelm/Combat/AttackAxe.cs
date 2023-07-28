@@ -7,11 +7,7 @@ namespace IronHelm.Combat
         public AttackAxe()
         {
             Item = new Axe();
-            ConsumesEnergy = true;
-            ConsumesItem = false;
-            Damage = 0;
-            Energy = 0;
-            Name = Item.Name;
+            Name = nameof(AttackAxe);
         }
         public IItem Item { get; }
 
@@ -24,5 +20,9 @@ namespace IronHelm.Combat
         public int Energy { get; }
 
         public string Name { get; }
+
+        public bool HasPredeterminedDamage { get; }
+
+        public bool ConsumesAttack { get; }
     }
 }

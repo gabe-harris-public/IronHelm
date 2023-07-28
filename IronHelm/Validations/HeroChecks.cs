@@ -5,15 +5,15 @@ namespace IronHelm.Validations
 {
     public static class HeroChecks
     {
-        public static bool CanAddToInventory(Hero hero, IItem trapping)
+        public static bool CanAddToInventory(Hero hero, IItem item)
         {
-            if (hero.EncumbranceMaximum >= EncumbranceTotal(hero) + trapping.Encumbrance) return true;
+            if (hero.EncumbranceMaximum >= EncumbranceTotal(hero) + item.Encumbrance) return true;
             else return false;
         }
 
-        public static bool CanPurchase(Hero hero, IItem trapping)
+        public static bool CanPurchase(Hero hero, IItem item)
         {
-            if (hero.Wealth >= trapping.Cost) return true;
+            if (hero.Coins >= item.Cost) return true;
             else return false;
         }
 

@@ -15,7 +15,7 @@ namespace IronHelm.Heroes
             {
                 HeroConditions.Type.Normal
             };
-            Encumbrance = 0;
+            Encumbrance = 10;
             EncumbranceMaximum = 10;
             Energy = 13;
             EnergyMaximum = 13;
@@ -34,7 +34,7 @@ namespace IronHelm.Heroes
             SkillProficiencies = new List<ISkillProficiency> {
                 new Mind()
             };
-            Wealth = 2;
+            Coins = 2;
         }
     }
 }

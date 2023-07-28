@@ -70,9 +70,11 @@ namespace IronHelm.Actions
 
         public static Hero ItemPurchase(Hero hero, IItem item)
         {
-            if (Validations.HeroChecks.CanAddToInventory(hero, item) && Validations.HeroChecks.CanPurchase(hero, item))
+            if (Validations.HeroChecks.CanAddToInventory(hero, item) 
+                && Validations.HeroChecks.CanPurchase(hero, item))
             {
-                hero.Wealth -= item.Cost;
+                hero.Coins -= item.Cost;
+                hero.Encumbrance -= item.Encumbrance;
                 hero.Inventory.Add(item);
             }
 

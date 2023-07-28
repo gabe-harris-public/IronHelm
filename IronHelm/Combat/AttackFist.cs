@@ -7,11 +7,9 @@ namespace IronHelm.Combat
         public AttackFist()
         {
             Item = new Fist();
-            ConsumesEnergy = false;
-            ConsumesItem = false;
             Damage = 1;
-            Energy = 0;
-            Name = Item.Name;
+            HasPredeterminedDamage = true;
+            Name = nameof(AttackFist);
         }
         public IItem Item { get; }
 
@@ -24,5 +22,9 @@ namespace IronHelm.Combat
         public int Energy { get; }
 
         public string Name { get; }
+
+        public bool HasPredeterminedDamage { get; }
+
+        public bool ConsumesAttack { get; }
     }
 }

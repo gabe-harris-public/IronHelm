@@ -5,6 +5,6 @@
         int Health { get; set; }
         int HealthMaximum { get; set; }
         string Name { get; }
-        int Wealth { get; set; }
+        int Coins { get; set; }
     }
 }

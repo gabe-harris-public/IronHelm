@@ -10,10 +10,10 @@ namespace IronHelm.Heroes
     {
 
         private delegate void EquipItem(Hero hero);
-        private EquipItem equipItem;
+        private EquipItem? equipItem;
 
         private delegate void UnEquipItem(Hero hero);
-        private UnEquipItem unEquipItem;
+        private UnEquipItem? unEquipItem;
 
 
         public void Equip(IItem item)
@@ -29,7 +29,7 @@ namespace IronHelm.Heroes
         {
             if (Inventory.Contains(item))
             {
-
+                //TODO Finish unequip
             };
         }
 
@@ -41,25 +41,41 @@ namespace IronHelm.Heroes
 
         public int Attack(IHeroAttack? requestedAttack)
         {
-            if (requestedAttack is null) { throw new Exception($"No Attack specified"); }
-
-            var foundAttack = CombatAttacks.Find(a => a.Name == requestedAttack.Name)
-                ?? throw new Exception($"Attack {requestedAttack.Name} not available");
+            switch (requestedAttack)
+            {
+                case null:
+                    throw new ArgumentNullException(nameof(requestedAttack), "No attack specified");
+                case IHeroAttack attack when !CombatAttacks.Any(x => x.Name == attack.Name):
+                    throw new ArgumentException($"Attack {attack.GetType()} not available", nameof(requestedAttack));
+            }
 
             int damage;
 
-            if (foundAttack.ConsumesEnergy)
-            {
-                Energy -= foundAttack.Energy;
-                damage = Combat.Actions.Roll6SidedDice(foundAttack.Energy);
-            }
+            if (requestedAttack.ConsumesEnergy)
+                Energy -= requestedAttack.Energy;
+
+            if (requestedAttack.HasPredeterminedDamage)
+                damage = requestedAttack.Damage;
             else
+                damage = Combat.Actions.Roll6SidedDice(requestedAttack.Energy);
+
+            if (requestedAttack.ConsumesItem)
             {
-                damage = foundAttack.Damage;
+                var attackItem = Inventory.Find(i => i.Name == requestedAttack.Item.Name);
+                if (attackItem is not null)
+                    Inventory.Remove(attackItem);
+                else throw new Exception($"{requestedAttack.Item.GetType()} not found in inventory");
             }
 
-            if (foundAttack.ConsumesItem)
-                Inventory.Remove(foundAttack.Item);
+            if (requestedAttack.ConsumesAttack)
+            {
+                var combatAttack = CombatAttacks.Find(i => i.Name == requestedAttack.Name);
+                if (combatAttack is not null)
+                    CombatAttacks.Remove(requestedAttack);
+                //BUG Should also remove the Axe attack.
+                //Find the item and retrive all it's attacks and remove them.
+                else throw new Exception($"{requestedAttack.Item.GetType()} not found in combat attacks");
+            }
 
             return damage;
         }
@@ -77,6 +93,6 @@ namespace IronHelm.Heroes
         public int Rations { get; set; }
         public List<ISkill> SkillList { get; set; } = new List<ISkill>();
         public List<ISkillProficiency> SkillProficiencies { get; set; } = new List<ISkillProficiency>();
-        public int Wealth { get; set; }
+        public int Coins { get; set; }
     }
 }

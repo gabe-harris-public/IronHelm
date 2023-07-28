@@ -7,27 +7,25 @@ using System.Threading.Tasks;
 
 namespace IronHelm.Combat
 {
-    public class AttackAxeThrow: IHeroAttack
+    public class AttackAxeThrow : IHeroAttack
     {
         public AttackAxeThrow()
         {
-            Item = new Axe();
-            ConsumesEnergy = false;
+            ConsumesAttack = true;
             ConsumesItem = true;
-            Damage = 0;
+            Damage = Actions.Roll6SidedDice(2);
             Energy = 3;
-            Name = Item.Name;
+            HasPredeterminedDamage = true;
+            Item = new Axe();
+            Name = nameof(AttackAxeThrow);
         }
-        public IItem Item { get; }
-
+        public bool ConsumesAttack { get; }
         public bool ConsumesEnergy { get; }
-
         public bool ConsumesItem { get; }
-
         public int Damage { get; }
-
         public int Energy { get; }
-
+        public bool HasPredeterminedDamage { get; }
+        public IItem Item { get; }
         public string Name { get; }
     }
 }
