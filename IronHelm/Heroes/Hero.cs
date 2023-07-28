@@ -69,12 +69,14 @@ namespace IronHelm.Heroes
 
             if (requestedAttack.ConsumesAttack)
             {
-                var combatAttack = CombatAttacks.Find(i => i.Name == requestedAttack.Name);
-                if (combatAttack is not null)
-                    CombatAttacks.Remove(requestedAttack);
-                //BUG Should also remove the Axe attack.
-                //Find the item and retrive all it's attacks and remove them.
-                else throw new Exception($"{requestedAttack.Item.GetType()} not found in combat attacks");
+                //var attacks = requestedAttack.Item.Attacks;
+                ////var foundAttacks = CombatAttacks.Find(i => i.Name == attacks.Contains(Name));
+                ////CombatAttacks.RemoveAll(attack => attacks.Contains(attack.Name));
+                //if (attacks is not null)
+                //{
+                //    var matchingItems = CombatAttacks.Where(item => attacks.Any(likeItem => likeItem.Name == item.Name));
+                //    CombatAttacks.RemoveAll(item => matchingItems.Any(match => match.Name == item.Name));
+                //}
             }
 
             return damage;

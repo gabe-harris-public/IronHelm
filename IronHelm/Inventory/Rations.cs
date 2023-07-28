@@ -1,4 +1,5 @@
 ﻿using IronHelm.Actions;
+using IronHelm.Combat;
 using IronHelm.Enumerations;
 using IronHelm.Heroes;
 
@@ -10,6 +11,9 @@ namespace IronHelm.Inventory
         public int Encumbrance => 0;
         public EquipableItem.LocationType LocationType => EquipableItem.LocationType.Accessory;
         public string Name => "Rations";
+
+        public List<IHeroAttack>? Attacks { get; }
+
         public void Equip(Hero hero)
         {
             HeroActions.RationsIncrease(hero, 2);
@@ -18,7 +22,7 @@ namespace IronHelm.Inventory
 
         public void UnEquip(Hero hero)
         {
-           // Nothing happens
+            // Nothing happens
         }
     }
 }

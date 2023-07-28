@@ -33,7 +33,7 @@ namespace IronHelmTests
         {
             var kilnOlma = new KilnOlma();
             var axe = new Axe();
-           
+
             var coinsBeforePurchase = kilnOlma.Coins;
             var encumbranceBeforePurchase = kilnOlma.Encumbrance;
             HeroActions.ItemPurchase(kilnOlma, axe);
@@ -41,10 +41,10 @@ namespace IronHelmTests
             Assert.NotEqual(encumbranceBeforePurchase, kilnOlma.Encumbrance);
 
             kilnOlma.Equip(axe);
-            
+
             var attackAxeThrow = new AttackAxeThrow();
             var damage = kilnOlma.Attack(attackAxeThrow);
-            
+
             Assert.NotEqual(0, damage);
             Assert.DoesNotContain(axe, kilnOlma.Inventory);
 

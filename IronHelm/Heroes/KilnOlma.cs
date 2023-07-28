@@ -11,10 +11,12 @@ namespace IronHelm.Heroes
     {
         public KilnOlma()
         {
+            CombatAttacks = new List<Combat.IHeroAttack> { };
             Conditions = new List<HeroConditions.Type>
             {
                 HeroConditions.Type.Normal
             };
+
             Encumbrance = 10;
             EncumbranceMaximum = 10;
             Energy = 13;

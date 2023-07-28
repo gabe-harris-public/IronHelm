@@ -1,6 +1,7 @@
 ﻿// Ignore Spelling: Shroom
 
 using IronHelm.Actions;
+using IronHelm.Combat;
 using IronHelm.Enumerations;
 using IronHelm.Heroes;
 
@@ -12,6 +13,7 @@ namespace IronHelm.Inventory
         public int Encumbrance => 1;
         public EquipableItem.LocationType LocationType => EquipableItem.LocationType.Accessory;
         public string Name => "Dusk Shroom";
+        public List<IHeroAttack>? Attacks { get; }
 
         public void Equip(Hero hero)
         {
