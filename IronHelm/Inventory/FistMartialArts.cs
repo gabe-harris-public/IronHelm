@@ -18,7 +18,6 @@ namespace IronHelm.Inventory
             Attacks.Add(new AttackFistMartialArts());
         }
 
-
         public void Equip(Hero hero)
         {
             if (Attacks is not null)
