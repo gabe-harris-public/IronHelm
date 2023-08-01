@@ -11,14 +11,11 @@ namespace IronHelm.Inventory
         public EquipableItem.LocationType LocationType => EquipableItem.LocationType.PrimaryHand;
         public string Name => "Bare Fist";
 
-        public List<IHeroAttack> Attacks { get; }
+        public List<IHeroAttack> Attacks { get; } = new List<IHeroAttack>();
 
         public Fist()
         {
-            Attacks = new List<IHeroAttack>()
-                {
-                    new AttackFist()
-                };
+            Attacks.Add(new AttackFist());
         }
         public void Equip(Hero hero)
         {

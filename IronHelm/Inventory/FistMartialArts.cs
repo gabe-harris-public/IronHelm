@@ -11,7 +11,13 @@ namespace IronHelm.Inventory
         public EquipableItem.LocationType LocationType => EquipableItem.LocationType.PrimaryHand;
         public string Name => "Martial Arts Fist";
 
-        public List<IHeroAttack>? Attacks { get; }
+        public List<IHeroAttack> Attacks { get; } = new List<IHeroAttack>();
+
+        public FistMartialArts()
+        {
+            Attacks.Add(new AttackFistMartialArts());
+        }
+
 
         public void Equip(Hero hero)
         {

@@ -6,12 +6,10 @@ namespace IronHelm.Combat
     {
         public AttackFistMartialArts()
         {
-            Item = new FistMartialArts();
             Damage = 2;
             HasPredeterminedDamage = true;
             Name = nameof(AttackFistMartialArts);
         }
-        public IItem Item { get; }
 
         public bool ConsumesEnergy { get; }
 

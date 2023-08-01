@@ -6,7 +6,6 @@ namespace IronHelm.Combat
     {
         public AttackFist()
         {
-            Item = new Fist();
             Damage = 1;
             HasPredeterminedDamage = true;
             Name = nameof(AttackFist);

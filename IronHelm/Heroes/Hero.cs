@@ -15,7 +15,6 @@ namespace IronHelm.Heroes
         private delegate void UnEquipItem(Hero hero);
         private UnEquipItem? unEquipItem;
 
-
         public void Equip(IItem item)
         {
             if (Inventory.Contains(item))
@@ -33,7 +32,6 @@ namespace IronHelm.Heroes
             };
         }
 
-
         public Hero()
         {
             Inventory.Add(new Fist());
@@ -46,7 +44,7 @@ namespace IronHelm.Heroes
                 case null:
                     throw new ArgumentNullException(nameof(requestedAttack), "No attack specified");
                 case IHeroAttack attack when !CombatAttacks.Any(x => x.Name == attack.Name):
-                    throw new ArgumentException($"Attack {attack.GetType()} not available", nameof(requestedAttack));
+                    throw new ArgumentException($"Attack {requestedAttack.Name} not available", nameof(requestedAttack));
             }
 
             int damage;
@@ -61,22 +59,14 @@ namespace IronHelm.Heroes
 
             if (requestedAttack.ConsumesItem)
             {
-                var attackItem = Inventory.Find(i => i.Name == requestedAttack.Item.Name);
+                var attackItem = Inventory.FirstOrDefault(item => item.Attacks is not null && item.Attacks.Any(attacks => attacks.Name == requestedAttack.Name));
+
                 if (attackItem is not null)
                     Inventory.Remove(attackItem);
-                else throw new Exception($"{requestedAttack.Item.GetType()} not found in inventory");
-            }
+                else throw new Exception($"{attackItem?.Name} not found in inventory");
 
-            if (requestedAttack.ConsumesAttack)
-            {
-                //var attacks = requestedAttack.Item.Attacks;
-                ////var foundAttacks = CombatAttacks.Find(i => i.Name == attacks.Contains(Name));
-                ////CombatAttacks.RemoveAll(attack => attacks.Contains(attack.Name));
-                //if (attacks is not null)
-                //{
-                //    var matchingItems = CombatAttacks.Where(item => attacks.Any(likeItem => likeItem.Name == item.Name));
-                //    CombatAttacks.RemoveAll(item => matchingItems.Any(match => match.Name == item.Name));
-                //}
+                var foundAttacks = CombatAttacks.FindAll(attack => attackItem.Attacks is not null && attackItem.Attacks.Any(n => n.Name == attack.Name));
+                CombatAttacks.RemoveAll(attacks => foundAttacks is not null && attacks == foundAttacks);
             }
 
             return damage;

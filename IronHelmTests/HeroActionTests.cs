@@ -43,6 +43,7 @@ namespace IronHelmTests
             kilnOlma.Equip(axe);
 
             var attackAxeThrow = new AttackAxeThrow();
+
             var damage = kilnOlma.Attack(attackAxeThrow);
 
             Assert.NotEqual(0, damage);

@@ -6,10 +6,8 @@ namespace IronHelm.Combat
     {
         public AttackAxe()
         {
-            Item = new Axe();
             Name = nameof(AttackAxe);
         }
-        public IItem Item { get; }
 
         public bool ConsumesEnergy { get; }
 

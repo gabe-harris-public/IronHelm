@@ -23,11 +23,11 @@ namespace IronHelm.Heroes
             EnergyMaximum = 13;
             Health = 11;
             HealthMaximum = 11;
-            Inventory = new List<IItem> {
-                new DuskShroom(),
-                new FistMartialArts()
-            };
-            Inventory.Remove(new Fist());
+            Inventory.AddRange(new IItem[] { new DuskShroom(), new FistMartialArts() });
+            
+            //TODO Not there because access violation. See Hero constructor.
+            //Inventory.Remove(new Fist());
+
             Name = "Kiln-Olma";
             Rations = 2;
             SkillList = new List<ISkill> {

@@ -7,13 +7,6 @@
       <FileName>Actions\HeroActions.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="IronHelm.Actions.HeroCombatActions" Collapsed="true">
-    <Position X="8.25" Y="2" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Actions\HeroCombatActions.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="IronHelm.Enumerations.HeroConditions" Collapsed="true">
     <Position X="3" Y="3" Width="1.5" />
     <Compartments>
@@ -47,7 +40,7 @@
   <Class Name="IronHelm.Heroes.Hero" Collapsed="true">
     <Position X="0.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAACAAAAAAAIAQAABAEAAQAAEEoAAAAAAAAAkEAAAA=</HashCode>
+      <HashCode>EAAACAAAAAAAIAQAABAECAQAAIEoAAAgAAQAAsUAAAA=</HashCode>
       <FileName>Heroes\Hero.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -59,7 +52,7 @@
       <FileName>Heroes\KilnOlma.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="IronHelm.Combat.Actions" Collapsed="true">
+  <Class Name="IronHelm.Combat.Actions">
     <Position X="3" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
@@ -69,7 +62,7 @@
   <Class Name="IronHelm.Combat.AttackAxe" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="4.75" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAACCAAAAgAAAAAAEAAQEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAACCAAAAgAAAAAAEAAQAIAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Combat\AttackAxe.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -77,7 +70,7 @@
   <Class Name="IronHelm.Combat.AttackAxeThrow" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="6.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAACCAAAAgAAAAAAEAAQEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAACCAAAAgAAAAAAEAAQEIAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Combat\AttackAxeThrow.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -85,7 +78,7 @@
   <Class Name="IronHelm.Combat.AttackFist" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="8.25" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAACCAAAAgAAAAAAEAAQEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAACCAAAAgAAAAAAEAAQEIAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Combat\AttackFist.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -93,7 +86,7 @@
   <Class Name="IronHelm.Combat.AttackFistMartialArts" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="3" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAACCAAAAgAAAAAAEAAQEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAACCAAAAgAAAAAAEAAQEIAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Combat\AttackFistMartialArts.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -108,14 +101,14 @@
   <Interface Name="IronHelm.Heroes.IHero" Collapsed="true">
     <Position X="3" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAAAAAAAAAAIAQAABAEAAAAAAEoAAAAAAAAAkAAAAA=</HashCode>
+      <HashCode>EAAAAAAAAAAAIAQAABAEAAAAAIEoAAAAAAAAAkAAAAA=</HashCode>
       <FileName>Heroes\IHero.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="IronHelm.Combat.IHeroAttack" Collapsed="true">
     <Position X="6.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAACCAAAAgAAAAAAEAAQEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAACCAAAAgAAAAAAEAAQAIAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Combat\IHeroAttack.cs</FileName>
     </TypeIdentifier>
   </Interface>

@@ -11,27 +11,23 @@ namespace IronHelm.Inventory
         public EquipableItem.LocationType LocationType => EquipableItem.LocationType.PrimaryHand;
         public string Name => "Axe";
 
-        public List<IHeroAttack> Attacks { get; }
+        public List<IHeroAttack> Attacks { get; } = new List<IHeroAttack>();
 
         public Axe()
         {
-            //Attacks = new List<IHeroAttack>()
-            //{
-            //    new AttackAxe(),
-            //    new AttackAxeThrow()
-            //};
+            Attacks.AddRange(new IHeroAttack[] { new AttackAxe(), new AttackAxeThrow() });
         }
 
         public void Equip(Hero hero)
         {
-            //if (Attacks is not null)
-            //    hero.CombatAttacks.AddRange(Attacks);
+            if (Attacks is not null)
+                hero.CombatAttacks.AddRange(Attacks);
         }
 
         public void UnEquip(Hero hero)
         {
-            //if (Attacks is not null)
-            //    hero.CombatAttacks.RemoveAll(attack => Attacks.Contains(attack));
+            if (Attacks is not null)
+                hero.CombatAttacks.RemoveAll(attack => Attacks.Contains(attack));
         }
     }
 }

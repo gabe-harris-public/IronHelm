@@ -18,6 +18,6 @@ namespace IronHelm.Heroes
         List<ISkill> SkillList { get; set; }
         List<ISkillProficiency> SkillProficiencies { get; set; }
         List<IHeroAttack> CombatAttacks { get; set; }
-        int Attack(IHeroAttack? requestedAttack);
+        int Attack(IHeroAttack attack);
     }
 }
