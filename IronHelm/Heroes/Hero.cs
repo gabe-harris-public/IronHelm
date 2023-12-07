@@ -47,6 +47,8 @@ namespace IronHelm.Heroes
 
         public List<ISkillProficiency> SkillProficiencies { get; set; } = new List<ISkillProficiency>();
 
+//refactor the attack method into the heroactions class.
+
         public int Attack(IHeroAttack? requestedAttack)
         {
             switch (requestedAttack)
